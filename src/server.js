@@ -1,9 +1,14 @@
 import express from "express";
 import "dotenv/config";
 import pool from "./db.js";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors({
+  origin: "http://localhost:3001"
+}));
 
 app.use(express.json());
 
